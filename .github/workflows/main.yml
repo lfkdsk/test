@@ -1,0 +1,58 @@
+name: run build.py
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 12 * * *'
+
+env:
+  GIT_USER: lfkdsk # change to yourself
+  GIT_EMAIL: lfkdsk@gmail.com # change to yourself
+  THEME_REPO: lfkdsk/hexo-theme-type
+  THEME_BRANCH: main
+  TEMPLATE_REPO: lfkdsk/album_template
+  TEMPLATE_BRANCH: main
+  THUMBNAIL_BRANCH: thumbnail
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: secrets
+    steps:
+    - name: Checkout template repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ env.TEMPLATE_REPO }}
+        ref: ${{ env.TEMPLATE_BRANCH }}        
+    - name: Checkout gallery repo
+      uses: actions/checkout@v3
+      with:
+        path: gallery    
+    - name: Checkout thumbnail repo
+      uses: actions/checkout@v3
+      continue-on-error: true
+      with:
+        ref: thumbnail
+        path: thumbnail_public        
+    - name: Checkout theme repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{ env.THEME_REPO }}
+        ref: ${{ env.THEME_BRANCH }}        
+        path: themes/hexo-theme-type
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' 
+    - run: pip install -r requirements.txt
+    - name: Generate Doc
+      run: |
+        python build.py
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_PAGES_DEPLOY }}
+        publish_dir: ./public
+        publish_branch: gh-pages
+        force_orphan: true
