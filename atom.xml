@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>我的摄影画廊</title>
+  
+  <subtitle>用镜头记录美好时光</subtitle>
+  <link href="https://lfkdsk.github.io/test/atom.xml" rel="self"/>
+  
+  <link href="https://lfkdsk.github.io/test/"/>
+  <updated>2025-10-08T01:47:03.475Z</updated>
+  <id>https://lfkdsk.github.io/test/</id>
+  
+  <author>
+    <name>lfkdsk</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>照片集</title>
+    <link href="https://lfkdsk.github.io/test/2025/undefined/"/>
+    <id>https://lfkdsk.github.io/test/2025/undefined/</id>
+    <published>2025-10-08T01:47:03.475Z</published>
+    <updated>2025-10-08T01:47:03.475Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
