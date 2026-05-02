@@ -1,15 +1,18 @@
+fuji:
+  url: fuji
+  date: "2026-05-02"
+  style: fullscreen
+  cover: fuji/B0000108-denoise_000.webp
 模式口 · 拍猫:
   url: Cat
   date: "2023-09-01"
   style: fullscreen
   cover: Cat/15.jpg
-
 羊:
   url: Nature
   date: "2023-09-02"
   style: fullscreen
   cover: Nature/16.webp
-
 颐和园:
   url: Landscape
   date: "2023-09-03"
