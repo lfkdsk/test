@@ -3,11 +3,6 @@
   date: "2023-09-01"
   style: fullscreen
   cover: Cat/15.jpg
-FUJIFILM:
-  url: fuji
-  date: "2026-05-02"
-  style: fullscreen
-  cover: fuji/B0000108-denoise_000.webp
 羊:
   url: Nature
   date: "2023-09-02"
